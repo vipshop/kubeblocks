@@ -650,7 +650,7 @@ func (r *OpsRequest) checkVolumesAllowExpansion(ctx context.Context, cli client.
 		if _, ok := vols[key]; !ok {
 			return // ignore not-exist its
 		}
-		mergedVcts := mergeItsCmpTemplates(itsSpec.VolumeClaimTemplates, cmpVcts)
+		mergedVcts := cmpVcts
 		for _, vct := range mergedVcts {
 			fillVol(vct, key, false)
 		}
